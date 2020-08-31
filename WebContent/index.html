@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<style type="text/css">
+	*
+	{
+		text-transform: capitalize;
+	
+	}
+</style>
+<body class="container-fluid">
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#">
+    <img src="images/1.jpg" alt="logo" style="width:40px;">
+    <span class="font-weight-bold">employee information</span>
+  </a>
+  
+  <!-- Links -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="#">register</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">search and delete</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">search and update</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">generate salary</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">salary sheet </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">salary slip</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">show all</a>
+    </li>
+  </ul>
+</nav>
+
+<div >
+  
+  <p><img src="images/back.jpg"></p>
+</div>
+<div class="row">
+<div class="col">
+	<h4 class="text-center text-danger">about us</h4><hr/>
+	<p>An employee management system consists of crucial work-related and important personal information about an employee. In a nutshell, it is an online inventory of all employees of an organization. Employees are the strength of any organization, and it is more so in case of a growing business</p>
+</div>
+
+	<div class="col">
+		<h4 class="text-center text-danger">log in</h4><hr>
+		<form action="servlet/AdminLogin" method="get">
+			<label>enter your email or phone</label>
+			<input type="text" name="id" id="id" class="form-control">
+			<label>enter your password</label>
+			<input type="password" name="pwd" class="form-control"><br>
+			<input type="submit"  value="login" class="btn btn-warning col">
+		</form>
+	</div>
+</div>
+<br><br>
+</body>
+</html>

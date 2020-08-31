@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>registration page</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script src="js/jquery.min.js"></script>
+
+</head>
+<style type="text/css">
+	
+	*
+	{
+		text-transform: capitalize;
+		font-family: verdana;
+		color: black;
+		
+	}
+
+.bg 
+{
+  /* The image used */
+  background-image: url("images/m8.jfif");
+
+  /* Full height */
+  height: 150%;
+  opacity: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+*
+{
+	text-transform:capitalize;
+}
+
+
+#d1
+{
+	border-radius:0px;
+	background-color: ;
+	
+	padding-bottom: 10px;
+	box-shadow: 0 4px 8px 16px 20px #ccc;
+}
+label
+{
+	color:white;
+	font-size: 0.8rem;
+	font-weight:bold;
+	float: left;
+
+}
+.row
+{
+	flex-wrap:wrap;
+	margin-right:-150px;
+	mardin-left:100px;
+
+}
+
+
+.card
+{
+	
+	background:#f3eeee66;
+	border-radius:30%;
+}
+.card-header
+{
+	padding:0;
+	background:#0000008c;
+}
+
+
+</style>
+<body >
+
+<div class="container-fluid bg" >
+ <center> 
+  <div class="col-sm-7 card " id="d1" style="">
+    <div class="card-header"><h3 class="display-5 text-warning" id="h1" style="color: white">Register here</h3>
+      <HR class="bg-danger" >
+    </div>
+    <div id="g1">
+      <div class="card-body">
+        <form action="servlet/EmpRegister"  >
+
+          <div class="row">
+            
+            <div class="col-sm-5">
+            <label class="text-capitalize">name</label>
+            <input type="text" name="ename" class="form-control text-capitalize" id=name  required="required">
+            </div>
+            <div class="col-sm-5">
+            <label class="text-capitalize">date of birth</label>
+            <input type="date" name="dob" class="form-control text-capitalize" id=dob required="required">
+            </div>
+           
+            <div class="col-sm-5">
+            <label class="text-capitalize">email</label><input type="email" name="email" class="form-control text-capitalize" id="email"  required="required">
+            </div>
+            
+            <div class="col-sm-5">
+            <label class="text-capitalize">mobile no:</label><input type="text" name="mobile" class="form-control" id="mobile" required="required" maxlength="10">
+            </div>
+           
+           
+ 			<div class="col-sm-5">
+            <label for="state">city</label>
+			<input type="text" list="cities" id="city"required="required" name="city" class="form-control">
+			<datalist id="cities">
+			<option value="pune">
+			<option value="delhi">
+			<option value="hydrabad">
+			<option value="banglore">
+			<option value="manglore">
+			<option value="gwalior">
+			<option value="chennai">
+			<option value="noida">
+			<option value="delhi">
+			
+			</datalist>
+          </div>
+          <div class="col-sm-5"> 
+              <label class="text-capitalize" >state</label>
+             <select class="form-control" id="state" name="state"  required="required" >
+               <option disabled="true">--select state--</option>
+              </select>
+           </div>
+
+            <div class="col-sm-6">
+            	<label>department</label>
+            	<input type="text" list="dept" id="department" name="dept" class="form-control">
+				<datalist id="dept">
+					<option value="computer science">
+					<option value="architecture">
+					<option value="mechancal">
+					<option value="information technology">
+					<option value="electronics">
+					<option value="management">
+				</datalist>
+            </div>
+ 			
+            <div class="col-sm-4">
+	           <label>designation</label>
+	           <input list="desgn" id="designation" name="desgn" class="form-control">
+				<datalist id="desgn">
+					<option value="teacher">
+					<option value="hod">
+					<option value="dean">
+					<option value="lab technician">	
+					<option value="assistent professor">
+					<option value="librarian">
+					<option value="testing">
+				</datalist>
+            </div>
+            <div class="col-sm-5">
+            	<label>salary</label>
+            	<input type="text" name="salary" class="form-control">
+
+            </div>
+            <div class="col-sm-5">
+            	<label>picture</label>
+            	<input type="file" name="picture" class="form-control" value="/images/">
+
+
+            </div>
+            
+            <div class="col-sm-10">
+            	<label>address</label>
+            	<textarea class="form-control" name="address"></textarea>
+            </div>
+
+			<div class="radio col-sm-3">
+				<br>
+			<input type="radio" name="gender" class="" id="gen" VALUE="male">&nbsp;&nbsp;<span class="text-light">male</span>
+            </div>
+            <div class="radio col-sm-3">
+            	<br>
+			<input type="radio" name="gender" class="" id="gen" VALUE="female">&nbsp;&nbsp;<span class="text-light">female</span>
+            </div>
+            <div class="col-sm-10"><br>
+         <input type="submit" name="b1" value="insert" class="btn btn-warning col-sm-10">
+     </div>
+      </div>
+      
+     
+     
+     
+    </form>
+  </div>
+ </div>
+</div>
+</div></center>
+</body>
+</html>
+
+<script>
+$(document).ready(function () 
+{
+	
+    $("#city").change(function () {
+        var val = $(this).val();
+        if (val == "pune") {
+            $("#state").html("<option value='maharastra'>Maharastra</option>");
+        } else if (val == "banglore"||val=="manglore") {
+            $("#state").html("<option value='karnatka'>Karnatka</option>");
+        } else if (val == "delhi"||val=="noida") {
+            $("#state").html("<option value='new delhi'>new delhi</option>");
+        } else if (val == "gwalior") {
+            $("#state").html("<option value='madhya pradesh'>madhya pradesh</option>");
+        }
+          else if(val=="hydrabad"){
+     		$("#state").html("<option value='telangana'>telangana</option>");
+     	}
+          else if(val=="chennai"){
+       		$("#state").html("<option value='tamilnadu'>tamilnadu</option>");
+       	}
+        
+        
+    });
+});
+</script>

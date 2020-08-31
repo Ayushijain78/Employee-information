@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<title>Registration Form</title>
+<script src="../js/jquery.min.js"></script>
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+*
+{
+	text-transform:capitalize;
+}
+.b1
+{
+	margin-left:160px;
+}
+input
+{
+	border-top:none;
+}
+body
+{
+	background:url("images/back.jpg");
+    background-size: cover;
+    background-repeat: repeat-x;
+    display: block; 
+
+}
+.bold
+{
+	border:2px solid white;
+	
+}
+#d1
+{
+	float:right;
+	margin-top:50px;
+	border-left:4px solid white;
+	border-bottom:7px solid white;
+	border-radius:30px;
+	background-color: ;
+	color: #fff;
+	padding-bottom: 50px;
+	box-shadow: 0 4px 8px 16px 20px #ccc;
+}
+#f11
+{
+	
+	float:right;
+	padding-right:-300px;
+	
+}
+.btn
+{
+
+	margin-top:30px;
+}
+.form-control
+{
+	
+}
+
+</style>
+<body class="container-fluid">
+
+
+
+
+<div class="container-fluid" >
+  
+  <div class="col-sm-7 panel panel-dark " id="d1" style="">
+    <div class="panel-heading"><h3 class="display-5" id="h1" style="color: white">Register here</h3>
+      <HR class="bold" >
+    </div>
+      <div class="panel-body">
+        <form action="servlet/RegisterEmp"  id="f11">
+          <div class="row">
+            
+            <div class="col-sm-5">
+            <label class="text-capitalize">name</label>
+            <input type="text" name="name" class="form-control text-capitalize" id=name  required="required">
+            </div>
+            <div class="col-sm-5">
+            <label class="text-capitalize">last name</label>
+            <input type="text" name="lastname" class="form-control text-capitalize" id=lastname  required="required">
+            </div>
+           
+            <div class="col-sm-5">
+            <label class="text-capitalize">email</label><input type="email" name="email" class="form-control text-capitalize" id="email"  required="required">
+            </div>
+            
+            <div class="col-sm-5">
+            <label class="text-capitalize">mobile no:</label><input type="text" name="phone" class="form-control" id="mobile" required="required" maxlength="10">
+            </div>
+           
+           
+ 			<div class="col-sm-5">
+             <label for="state">state</label>
+				<input list="states" name="state" id="state" class="form-control" required="required">
+				
+				<datalist id="states">
+				  <option value="madhya pradesh">
+				  <option value="chattishgrah">
+				  <option value="karnataka">
+				  <option value="uttar pradesh">
+				  <option value="gujrat">
+				</datalist>   
+          </div>
+          <div class="col-sm-5"> 
+              <label class="text-capitalize" >city</label>
+              <select class="form-control" id="city" name="city"  required="required">
+                <option>--select city--</option>
+              </select>
+           </div>
+            <div class="col-sm-5"><label class="text-capitalize">address</label><input type="text" name="address" class="form-control text-capitalize" id="address"  required="required"></div>
+ 			
+            <div class="col-sm-5">
+            <label class="text-capitalize">password</label><input type="password" name="pwd" class="form-control" id="pwd" required="required" maxlength="10">
+            </div>
+            <div class="col-sm-5">
+            <label class="text-capitalize">gender</label>
+            <br>
+            <input type="radio" name="gender" class="" id="gen" required="required" value="male" >&nbsp;&nbsp;&nbsp;male&nbsp;&nbsp;&nbsp;
+			<input type="radio" name="gender" class="" id="gen" VALUE="female">&nbsp;&nbsp;&nbsp;female
+            </div>
+        
+      </div>
+      
+     
+      <input type="submit" value="insert" class="btn btn-warning col-sm-10"  >
+      
+     
+    </form>
+  </div>
+ </div>
+
+</div>
+</body>
+</html>
+
+<script>
+$(document).ready(function () 
+{
+	
+    $("#state").change(function () {
+        var val = $(this).val();
+        if (val == "madhya pradesh") {
+            $("#city").html("<option value='gwalior'>gwalior</option><option value='indore'>indore</option><option value='guna'>guna</option><option value='shivpuri'>shivpuri</option>");
+        } else if (val == "chattishgrah") {
+            $("#city").html("<option value='raipur'>raipur</option><option value='bilaspur'>bilaspur</option><option value='ambikapur'>ambikapur</option><option value='bhilai'>bhilai</option>");
+        } else if (val == "karnataka") {
+            $("#city").html("<option value='bangluru'>bangluru</option><option value='mangalore'>manglore</option><option value='shivamogga'>shivamogga</option><option value='hubli'>hubli</option>");
+        } else if (val == "gujrat") {
+            $("#city").html("<option value='ahmedabad'>ahemdabad</option><option value='gandhinagar'>gandhinagar</option><option value='vadodara'>vadodara</option><option value='rajkot'>rajkot</option><option value='surat'>surat</option>");
+        }
+        else if (val == "uttar pradesh") {
+            $("#city").html("<option value='lucknow'>lucknow</option><option value='agra'>agra</option><option value='kanpur'>kanpur</option><option value='meerut'>meerut</option><option value='noida'>noida</option>");
+        }
+        
+    });
+});
+</script>
